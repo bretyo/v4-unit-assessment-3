@@ -1,0 +1,67 @@
+body{
+  background-color: whitesmoke;
+}
+
+h1{
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+  color: rgb(94, 185, 155);
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.096);
+}
+
+.search-bar{
+  display: flex;
+  justify-content: center;
+  /* background-color: teal; */
+}
+
+button{
+  margin: 20px;
+}
+
+input{
+  margin: 20px;
+}
+
+.list-n-shelf{
+  display: flex;
+  justify-content: space-between;
+  /* width: 100vw; */
+  min-height: 80vh;
+
+}
+
+.list{
+  /* background-color: thistle; */
+  display: flex;
+  min-width: 150px;
+  flex-wrap: wrap;
+}
+
+.book{
+  width: 200px;
+  text-align: center;
+  margin: 15px
+}
+.book > img{
+  width: 200px;
+}
+
+.shelf{
+  display: flex;
+  flex-direction: column;
+  border-left: black 2px solid;
+  /* background-color: tomato; */
+  min-width: 300px;
+  max-width: 300px;
+  align-items: center;
+  padding: 8px;
+}
+
+.shelf > button {
+  
+  margin: 0 0 20px 0 ;
+}

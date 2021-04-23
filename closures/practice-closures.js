@@ -9,11 +9,17 @@
   */
   
   //CODE HERE
+  function myFunc(){
+    var myStr = 'super secret string';
+    function getSecretString(){ return myStr }
+    return getSecretString;
+  }
 
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
+  const secretString = myFunc();
   
   
   ////////////PROBLEM 2////////////
@@ -29,27 +35,37 @@
   */
   
   //CODE HERE
+  function lightSwitch(){
+    let isTheLightOn = false; // Jasmine wont work unless i initialize this as true
+    function flipTheSwitch(){
+      isTheLightOn = !isTheLightOn 
+      return `The light is ${isTheLightOn === true ? 'on' : 'off'}`
+    }
+    return flipTheSwitch;
+  }
 
-  
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
-  
+
   //CODE HERE
+  const kitchenSwitch = lightSwitch();
 
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
+  kitchenSwitch();
   
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+  const bathroomSwitch = lightSwitch();
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
+  bathroomSwitch();
+  bathroomSwitch();
   
   
   ////////////PROBLEM 3////////////
@@ -64,7 +80,22 @@
   */
 
   //CODE HERE
-
+  function plantTracker(){
+    let plant = 'fern';
+    let height = 12;
+    return {
+      readInfo: function(){
+        return `This is a ${plant} plant that is ${height} inches tall.`
+      },
+      waterPlant: function(){
+        return ++height 
+      },
+      prunePlant: function(){
+        return --height
+      }
+        
+    }
+  }
 
   ////////////PROBLEM 4////////////
 
@@ -79,13 +110,29 @@
   */
 
   //CODE HERE
+  function inventory(){
+    let products = [];
 
+    return{
+      readProducts: function(){
+        return products;
+      },
+      addToProducts: function(item){
+        products.push(item);
+      },
+      deleteFromProducts: function(item){
+        let index = products.indexOf(item);
+        products.splice(index, 1)
+      }
+    }
+  }
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
   //CODE HERE
+  const shoes = inventory();
 
 
   /*
@@ -93,4 +140,4 @@
   */
 
   //CODE HERE
-
+  shoes.addToProducts('yeezies')
